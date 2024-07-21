@@ -10,12 +10,17 @@ const getPagination = async (req, res) => {
         let rowPerPage = parseInt(req.query["row-per-page"]);
         let skip = pageNo * rowPerPage - rowPerPage;
         let result = await User.find({}).limit(rowPerPage).skip(skip);
+        let count = await User.find({}).countDocuments();
+        let pages = Math.ceil(count / rowPerPage);
 
-        if(result) {
-            res.status(200).send({result});
-        } else {
-            res.status(404).send({message: "No data found"});
+        let pagination = {
+            totalCount: count,
+            page: pageNo,
+            rowPerPage: rowPerPage,
+            totalPages: pages
         }
+
+        res.status(200).send({result: result, pagination});
     } catch(err) {
         console.log(err);
 
