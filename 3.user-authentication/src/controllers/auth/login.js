@@ -1,6 +1,8 @@
 const User = require("../../models/userModel");
 
-
+// @desc - login and token generation of user
+// @route - POST - api/auth/login
+// @access - Public
 const login = async(req, res) => {
     try{
         let keys = Object.keys(req.body);
