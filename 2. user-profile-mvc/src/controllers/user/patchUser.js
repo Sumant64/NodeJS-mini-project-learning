@@ -1,11 +1,10 @@
 const User = require('../../models/userModel');
 
 // @desc - it will update the user
-// @route - PATCH - /api/user/
+// @route - PATCH - /api/user/:id
 // @access - Public
 const patchUser = async (req, res) => {
     try{
-        console.log('entered into patch user')
         let id = req.params.id;
         const updates = Object.keys(req.body);
         const allowedUpdates = ["name", "hobbies", "age", "education", "dob"];
