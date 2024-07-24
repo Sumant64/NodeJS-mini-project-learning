@@ -11,6 +11,7 @@ const getPagination = async (req, res) => {
         let skip = pageNo * rowPerPage - rowPerPage;
         let result = await User.find({}).limit(rowPerPage).skip(skip);
         let count = await User.find({}).countDocuments();
+        
         let pages = Math.ceil(count / rowPerPage);
 
         let pagination = {

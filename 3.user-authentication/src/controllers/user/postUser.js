@@ -4,7 +4,7 @@ const User = require("../../models/userModel");
 
 // @desc - post the new user
 // @route - POST- api/user/
-// @access - PUBLIC
+// @access - Admin
 const postUser = async(req, res) => {
     try{
         const keys = Object.keys(req.body);

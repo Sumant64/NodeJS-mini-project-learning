@@ -3,7 +3,7 @@ const User = require("../../models/userModel");
 
 // @desc - get the users
 // @route - GET - api/user?page=2&row-per-page=5
-// @access - public
+// @access - Admin
 const getUsers = async(req, res) => {
     try{
         let page = parseInt(req.query.page);
