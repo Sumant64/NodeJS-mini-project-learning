@@ -1,0 +1,6 @@
+o (Mini project) Logger implementation with Winston package
+o (Mini project) validation with joi
+o (Mini project) getting complex data with aggregation pipeline
+o (Mini project) socket io with node js
+o (Mini project) google drive doc receipt generation with node js
+o 
